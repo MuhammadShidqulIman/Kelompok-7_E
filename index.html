@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Hayabusa | Frontend Developer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+ 
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="w-full border-b border-gray-200 sticky top-0 bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a class="text-2xl font-bold text-gradient flex items-center gap-1 cursor-pointer" id="nav-home">
+        <span>My Portofolio</span>
+        <span class="text-purple-500">.</span>
+      </a>
+      
+      <ul class="hidden md:flex items-center space-x-8 text-sm font-medium" id="nav-links">
+        <li>
+          <button class="nav-link hover:text-purple-600 transition" data-page="home">
+            HOME
+          </button>
+        </li>
+        <li>
+          <button class="nav-link hover:text-purple-600 transition" data-page="about">
+            ABOUT
+          </button>
+        </li>
+        <li>
+          <button class="nav-link hover:text-purple-600 transition" data-page="projects">
+            PROJECTS
+          </button>
+        </li>
+        <li>
+          <button class="nav-link hover:text-purple-600 transition" data-page="contact">
+            CONTACT
+          </button>
+        </li>
+      </ul>
+      
+      <div id="auth-buttons" class="flex items-center space-x-4">
+        <button id="btn-login" class="btn-primary text-white font-semibold px-5 py-2.5 rounded-lg">
+          Login
+        </button>
+        <button id="btn-register" class="bg-purple-100 text-purple-700 font-semibold px-5 py-2.5 rounded-lg hover:bg-purple-200 transition">
+          Register
+        </button>
+        <button id="btn-logout" class="hidden bg-red-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-red-700 transition">
+          Logout
+        </button>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-purple-600">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-6 py-4">
+      <ul class="flex flex-col space-y-4" id="mobile-nav-links">
+        <li>
+          <button class="nav-link hover:text-purple-600 transition w-full text-left" data-page="home">
+            HOME
+          </button>
+        </li>
+        <li>
+          <button class="nav-link hover:text-purple-600 transition w-full text-left" data-page="about">
+            ABOUT
+          </button>
+        </li>
+        <li>
+          <button class="nav-link hover:text-purple-600 transition w-full text-left" data-page="projects">
+            PROJECTS
+          </button>
+        </li>
+        <li>
+          <button class="nav-link hover:text-purple-600 transition w-full text-left" data-page="contact">
+            CONTACT
+          </button>
+        </li>
+      </ul>
+      
+      <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-4">
+        <button id="btn-login-mobile" class="btn-primary text-white font-semibold px-4 py-2 rounded-lg flex-1">
+          Login
+        </button>
+        <button id="btn-register-mobile" class="bg-purple-100 text-purple-700 font-semibold px-4 py-2 rounded-lg hover:bg-purple-200 transition flex-1">
+          Register
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Home Section -->
+    <section id="home" class="hidden">
+      <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-12 md:mb-0">
+          <h3 class="text-xl font-medium text-gray-600 mb-2">Hello, I'm</h3>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-4">Hayabusa</h1>
+          <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">
+            <span class="typing-animation"></span>
+          </h2>
+          <p class="text-gray-600 mb-8 max-w-lg leading-relaxed">
+            I craft exceptional digital experiences with modern web technologies. 
+            Passionate about creating beautiful, responsive, and user-friendly interfaces 
+            that make an impact.
+          </p>
+          
+        
+          
+          <div class="mt-8 flex space-x-4">
+            <a href="#" class="social-icon text-gray-600 hover:text-purple-600 text-xl">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-icon text-gray-600 hover:text-purple-600 text-xl">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-icon text-gray-600 hover:text-purple-600 text-xl">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon text-gray-600 hover:text-purple-600 text-xl">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="md:w-1/2 flex justify-center">
+          <div class="hero-image w-64 h-64 md:w-80 md:h-80 rounded-full bg-purple-100 flex items-center justify-center overflow-hidden border-4 border-purple-200">
+            <img src="assets/img/hayabusa.jpg" 
+                 alt="Hayabusa" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="hidden py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h1 class="text-3xl font-bold text-center mb-16 section-title text-purple-600">
+          ABOUT ME
+        </h1>
+        
+        <div class="flex flex-col lg:flex-row gap-12">
+          <div class="lg:w-1/3 flex justify-center">
+            <div class="w-64 h-64 rounded-2xl overflow-hidden shadow-xl">
+              <img src="assets/img/hayabusa.jpg" 
+                   alt="Hayabusa" class="w-full h-full object-cover">
+            </div>
+          </div>
+          
+          <div class="lg:w-2/3">
+            <h2 class="text-2xl font-bold mb-6 text-gradient">Who I Am</h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              I'm a passionate frontend developer with 5+ years of experience creating 
+              modern web applications. I specialize in React, Vue.js, and responsive design, 
+              with a keen eye for UI/UX details that make products stand out.
+            </p>
+            
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              My journey in web development started when I was 15, and since then I've worked 
+              with startups and established companies to bring their digital visions to life. 
+              I believe in writing clean, maintainable code and creating intuitive user experiences.
+            </p>
+            
+            <div class="mb-8">
+              <h3 class="text-xl font-semibold mb-4 text-gray-700">My Skills</h3>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">HTML5</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">CSS3</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">React</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Vue.js</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Tailwind CSS</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Node.js</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Git</span>
+                <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">UI/UX Design</span>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="hidden py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h1 class="text-3xl font-bold text-center mb-16 section-title text-purple-600">
+          MY PROJECTS
+        </h1>
+        
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-xl font-semibold text-gray-700">Featured Work</h2>
+          <div id="admin-add-project-container" style="display:none;">
+            <button id="btn-add-project" class="btn-primary text-white font-semibold px-6 py-3 rounded-lg">
+              <i class="fas fa-plus mr-2"></i> Add Project
+            </button>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-list">
+          <!-- Projects will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="hidden py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h1 class="text-3xl font-bold text-center mb-16 section-title text-purple-600">
+          GET IN TOUCH
+        </h1>
+        
+        <div class="flex flex-col lg:flex-row gap-12">
+          <div class="lg:w-1/2">
+            <h2 class="text-2xl font-bold mb-6 text-gradient">Contact Information</h2>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              Have a project in mind or want to discuss potential opportunities? 
+              Feel free to reach out to me through any of the channels below.
+            </p>
+            
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <div class="text-purple-600 mt-1">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-700">Email</h3>
+                  <p class="text-gray-600">contact@hayabusa.dev</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="text-purple-600 mt-1">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-700">Phone</h3>
+                  <p class="text-gray-600">+1 (123) 456-7890</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="text-purple-600 mt-1">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-700">Location</h3>
+                  <p class="text-gray-600">Planet Mars</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8 flex space-x-4">
+              <a href="#" class="social-icon text-gray-600 hover:text-purple-600 text-2xl">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social-icon text-gray-600 hover:text-purple-600 text-2xl">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="#" class="social-icon text-gray-600 hover:text-purple-600 text-2xl">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon text-gray-600 hover:text-purple-600 text-2xl">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="lg:w-1/2">
+            <form class="space-y-6 bg-white p-8 rounded-xl shadow-lg">
+              <div>
+                <label for="name" class="block mb-2 font-medium text-gray-700">Your Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+                  placeholder="Hayabusa"
+                />
+              </div>
+              <div>
+                <label for="email" class="block mb-2 font-medium text-gray-700">Email Address</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div>
+                <label for="subject" class="block mb-2 font-medium text-gray-700">Subject</label>
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  required
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+                  placeholder="Project Inquiry"
+                />
+              </div>
+              <div>
+                <label for="message" class="block mb-2 font-medium text-gray-700">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+                  placeholder="Write your message here..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn-primary text-white font-semibold px-8 py-3 rounded-lg w-full"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <a class="text-2xl font-bold text-gradient flex items-center gap-1">
+            <span>My Portofolio</span>
+            <span class="text-purple-500">.</span>
+          </a>
+          <p class="mt-2 text-gray-400">Crafting digital experiences that matter.</p>
+        </div>
+        
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+        </div>
+      </div>
+      
+      
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="modal-login" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative modal-enter">
+      <button id="btn-login-close" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="text-center mb-6">
+        <h2 class="text-3xl font-bold text-gray-800">Welcome Back</h2>
+        <p class="text-gray-600 mt-2">Login to your account</p>
+      </div>
+      
+      <form id="form-login" class="space-y-5">
+        <div>
+          <label for="login-username" class="block font-medium text-gray-700 mb-2">Username</label>
+          <input
+            id="login-username"
+            type="text"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            placeholder="Enter your username"
+            autocomplete="username"
+          />
+        </div>
+        <div>
+          <label for="login-password" class="block font-medium text-gray-700 mb-2">Password</label>
+          <input
+            id="login-password"
+            type="password"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+          />
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <input id="remember-me" type="checkbox" class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
+            <label for="remember-me" class="ml-2 block text-sm text-gray-700">Remember me</label>
+          </div>
+          <a href="#" class="text-sm text-purple-600 hover:text-purple-700">Forgot password?</a>
+        </div>
+        <button
+          type="submit"
+          class="btn-primary text-white font-semibold px-6 py-3 rounded-lg w-full"
+        >
+          Login
+        </button>
+      </form>
+      
+      <div class="mt-6 text-center text-sm text-gray-600">
+        Don't have an account? 
+        <button id="switch-to-register" class="text-purple-600 font-medium hover:text-purple-700">Sign up</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="modal-register" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative modal-enter">
+      <button id="btn-register-close" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="text-center mb-6">
+        <h2 class="text-3xl font-bold text-gray-800">Create Account</h2>
+        <p class="text-gray-600 mt-2">Join us today</p>
+      </div>
+      
+      <form id="form-register" class="space-y-5">
+        <div>
+          <label for="register-username" class="block font-medium text-gray-700 mb-2">Username</label>
+          <input
+            id="register-username"
+            type="text"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            placeholder="Choose a username"
+            autocomplete="username"
+          />
+        </div>
+        <div>
+          <label for="register-email" class="block font-medium text-gray-700 mb-2">Email</label>
+          <input
+            id="register-email"
+            type="email"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            placeholder="your@email.com"
+            autocomplete="email"
+          />
+        </div>
+        <div>
+          <label for="register-password" class="block font-medium text-gray-700 mb-2">Password</label>
+          <input
+            id="register-password"
+            type="password"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            placeholder="Create a password"
+            autocomplete="new-password"
+          />
+        </div>
+        <div>
+          <label for="register-password-confirm" class="block font-medium text-gray-700 mb-2">Confirm Password</label>
+          <input
+            id="register-password-confirm"
+            type="password"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            placeholder="Confirm your password"
+            autocomplete="new-password"
+          />
+        </div>
+        <div class="flex items-center">
+          <input id="terms" type="checkbox" required class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
+          <label for="terms" class="ml-2 block text-sm text-gray-700">
+            I agree to the <a href="#" class="text-purple-600 hover:text-purple-700">Terms</a> and <a href="#" class="text-purple-600 hover:text-purple-700">Privacy Policy</a>
+          </label>
+        </div>
+        <button
+          type="submit"
+          class="btn-primary text-white font-semibold px-6 py-3 rounded-lg w-full"
+        >
+          Register
+        </button>
+      </form>
+      
+      <div class="mt-6 text-center text-sm text-gray-600">
+        Already have an account? 
+        <button id="switch-to-login" class="text-purple-600 font-medium hover:text-purple-700">Sign in</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Project Modal -->
+  <div id="modal-project" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl shadow-2xl max-w-lg w-full p-8 relative modal-enter">
+      <button id="btn-project-close" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <h2 id="modal-project-title" class="text-2xl font-bold text-center mb-6">Add New Project</h2>
+      
+      <form id="form-project" class="space-y-5">
+        <div>
+          <label for="project-title" class="block font-medium text-gray-700 mb-2">Project Title</label>
+          <input
+            id="project-title"
+            type="text"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            placeholder="Enter project title"
+          />
+        </div>
+        <div>
+          <label for="project-image" class="block font-medium text-gray-700 mb-2">Image URL</label>
+          <input
+            id="project-image"
+            type="url"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            placeholder="https://example.com/image.jpg"
+          />
+        </div>
+        <div>
+          <label for="project-description" class="block font-medium text-gray-700 mb-2">Description</label>
+          <textarea
+            id="project-description"
+            rows="3"
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            placeholder="Brief description of the project"
+          ></textarea>
+        </div>
+        <div class="flex justify-between items-center pt-2">
+          <button
+            type="submit"
+            class="btn-primary text-white font-semibold px-8 py-3 rounded-lg"
+          >
+            Save Project
+          </button>
+          <button
+            type="button"
+            id="btn-project-cancel"
+            class="text-gray-600 hover:text-gray-900 font-semibold px-6 py-2"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
