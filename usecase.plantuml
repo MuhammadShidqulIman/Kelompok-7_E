@@ -1,0 +1,66 @@
+@startuml
+
+left to right direction
+
+skinparam actor {
+  BackgroundColor #F2F2F2
+  BorderColor black
+  FontColor black
+}
+skinparam usecase {
+  BackgroundColor #EFEFFF
+  BorderColor #000088
+  FontColor black
+  ArrowColor #555555
+  Shadowing true
+}
+
+actor Admin #LightGreen
+actor Pengunjung #LightBlue
+
+rectangle "Portfolio" {
+
+  ' Use case untuk Pengunjung
+  usecase U1 as "Melihat Halaman Utama"
+  usecase U2 as "Melihat Tentang Saya"
+  usecase U3 as "Melihat Proyek"
+  usecase U4 as "Melihat Kontak"
+  usecase U5 as "Mengirim Formulir Kontak" #FFEEEE
+  usecase U6 as "Register"
+  usecase U7 as "Login"
+ usecase U8 as "Logout"
+
+  Pengunjung --> U6
+  Pengunjung --> U8
+
+  ' Use case untuk Admin
+  usecase A1 as "Mengelola Proyek"
+  usecase A2 as "Menambah Proyek" #FFEEEE
+  usecase A3 as "Mengedit Proyek" #FFEEEE
+  usecase A4 as "Menghapus Proyek" #FFEEEE
+  usecase A5 as "Melihat Halaman Utama"
+  usecase A6 as "Melihat Tentang Saya"
+  usecase A7 as "Melihat Proyek"
+  usecase A8 as "Melihat Kontak"
+  usecase A9 as "Login"
+
+  Admin --> A9
+
+  A1 .down.> A2 : <<extend>>
+  A1 .down.> A3 : <<extend>>
+  A1 .down.> A4 : <<extend>>
+  A9 .down.> A5 : <<extend>>
+  A9 .down.> A6 : <<extend>>
+  A9 .down.> A7 : <<extend>>
+  A9 .down.> A8 : <<extend>>
+  A7 .down.> A1 : <<extend>>
+
+  U6 .down.> U7 : <<include>>
+  U7 .down.> U2 : <<extend>>
+  U7 .down.> U3 : <<extend>>
+  U7 .down.> U4 : <<extend>>
+  U7 .down.> U1 : <<extend>>
+  U4 .down.> U5 : <<extend>>
+}
+}
+@enduml
